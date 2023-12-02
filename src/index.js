@@ -3,12 +3,12 @@
 const fastify = require("fastify");
 const server = fastify();
 
-server.get("/", () => {
+const emailRoutes = require("./routes/email");
 
-    return "Hello World!"
-})
-
+server.register(emailRoutes);
 
 server.listen({
     port: process.env.PORT || 3200
 })
+
+ 
